@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'programs.contrib.ProgramsConfig',
-    'food.contrib.FoodConfig',
-    'users.contrib.UsersConfig',
-    'coach.contrib.CoachConfig',
+    'programs.apps.ProgramsConfig',
+    'food.apps.FoodConfig',
+    'users.apps.UsersConfig',
+    'coach.apps.CoachConfig',
 ]
 
 MIDDLEWARE = [
