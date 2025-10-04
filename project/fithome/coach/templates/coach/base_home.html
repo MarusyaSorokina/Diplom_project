@@ -1,89 +1,6 @@
-<!DOCTYPE html>
+{% extends 'coach/base.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> FitHome - с каждым днем ты становишься лучше! </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-<!-- CSS here -->
-	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-	<link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
-    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
-    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animated-headline.css' %}">
-	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-	<link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
-	<link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
-	<link rel="stylesheet" href="{% static 'css/slick.css' %}">
-	<link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <!-- ? Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="{% static 'images/loder.png' %}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Start -->
-
-    <header>
-        <!--? Header Start -->
-        <div class="header-area header-transparent">
-            <div class="main-header header-sticky">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <!-- Logo -->
-                        <div class="col-xl-2 col-lg-2 col-md-1">
-                            <div class="logo">
-                                <a href="index.html"><img src="{% static 'images/logo.png' %}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-10 col-lg-10 col-md-10">
-                            <div class="menu-main d-flex align-items-center justify-content-end">
-                                <!-- Main-menu -->
-                                <div class="main-menu f-right d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li><a href="index.html">Главная</a></li>
-                                            <li><a href="about.html">О нас</a></li>
-                                            <li><a href="services.html">Тренировки</a></li>
-                                            <li><a href="food.html">Питание</a></li>
-                                            <li><a href="blog.html">Блог</a></li>
-                                                                                            
-                                            
-                                            <li><a href="contact.html">Регистрация</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                    <a href="from.html" class="btn header-btn">Авторизация</a>
-                                </div>
-                            </div>
-                        </div>   
-                        <!-- Mobile Menu -->
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-    </header>
-
-    {% block content %}
+{% block content %}
     <main>
         <!--? slider Area Start-->
         <div class="slider-area position-relative">
@@ -110,7 +27,7 @@
                             <div class="col-lg-6 col-md-12">
                                 <!-- about-img -->
                                 <div class="about-img ">
-                                    <img src="static/images/about.jpeg" alt="">
+                                    <img src="{% static 'assets/img/gallery/about.png' %}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
@@ -135,5 +52,4 @@
     </main>
 
     {% endblock %}
-</body>
-</html>
+
