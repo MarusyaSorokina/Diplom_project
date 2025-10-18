@@ -24,12 +24,13 @@
                                             <li><a href="blog.html">Блог</a></li>
 
 
-                                            <li><a href="contact.html">Регистрация</a></li>
+                                            <li><a href="{% url 'register' %}">Регистрация</a></li>
+                                            <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                                 <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                    <a href="from.html" class="btn header-btn">Авторизация</a>
+                                    <a href="{% url 'login' %}" class="btn header-btn">Авторизация</a>
                                 </div>
                             </div>
                         </div>

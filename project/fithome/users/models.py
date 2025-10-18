@@ -1,12 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True)
-    name = models.CharField(max_length=200, blank=True)
-    email = models.EmailField(max_length=500, blank=True)
-    username = models.CharField(max_length=200, blank=True)
+class User(AbstractUser):
+    image = models.ImageField(upload_to="users_images", blank=True)
+
 
 
 
