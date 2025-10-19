@@ -1,4 +1,23 @@
-{% extends 'coach/base_home.html' %}
+{% extends 'coach/base.html' %}
+{% load static %}
+
+{% block css %}
+<!-- CSS here -->
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animated-headline.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+{% endblock %}
 
 {% block content %}
 
@@ -13,8 +32,10 @@
                             <div class="col-xl-7 col-lg-9 col-md-8 col-sm-9">
                                 <div class="hero__caption">
                                     <span data-animation="fadeInLeft" data-delay="0.1s">С FitHome</span>
-                                    <h1 data-animation="fadeInLeft" data-delay="0.4s">Создайте идеальную форму тела для полноценной и здоровой жизни.</h1>
-                                    <a href="from.html" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.8s">Записаться на тренировк</a>
+                                    <h1 data-animation="fadeInLeft" data-delay="0.4s">Создайте идеальную форму тела для
+                                        полноценной и здоровой жизни.</h1>
+                                    <a href="{% url 'coach' %}" class="btn hero-btn" data-animation="fadeInLeft"
+                                       data-delay="0.8s">Узнать о нас</a>
                                 </div>
                             </div>
                         </div>
@@ -29,7 +50,7 @@
                     <div class="col-lg-6 col-md-12">
                         <!-- about-img -->
                         <div class="about-img ">
-                                    <img src="static/images/about.jpeg" alt="">
+                                    <img src="{% static 'assets/img/gallery/about.png' %}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
@@ -44,7 +65,7 @@
                                          и меню, а также вы можете найти полезные спортивные советы.
                                     </p>
                                     <p class="mb-65 pera-bottom">Ваше идеальное тело с нашими тренировками!</p>
-                                    <a href="from.html" class="btn">Авторизация</a>
+                                    <a href="{% url 'register' %}" class="btn">Авторизация</a>
                         </div>
                     </div>
                 </div>

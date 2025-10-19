@@ -1,7 +1,17 @@
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
 from django import forms
 
-from users.models import User
+from .models import User
+
+class UserProfileForm(UserChangeForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control py-4'
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'image', 'username', 'email')
 
 class UserRegistrationForm(UserCreationForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': "Введите имя"}))

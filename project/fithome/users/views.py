@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import UserLoginForm, UserRegistrationForm
+from .forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from django.contrib import auth
 
 
@@ -36,6 +36,9 @@ def register(request):
     return render(request, 'users/register.html', context)
 
 def profile(request):
-    context = {'title': 'Store - Профиль'}
+    form = UserProfileForm()
+    context = {'title': 'FitHome - Профиль',
+               'form': form
+               }
     return render(request, 'users/profile.html', context)
 
