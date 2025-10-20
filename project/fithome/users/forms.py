@@ -4,10 +4,15 @@ from django import forms
 from .models import User
 
 class UserProfileForm(UserChangeForm):
+    username = forms.CharField(widget=forms.TextInput(attrs={'readonly': True}))
+    email = forms.CharField(widget=forms.EmailInput(attrs={'readonly': True}))
+    image = forms.ImageField(widget=forms.FileInput(), required=False)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control py-4'
+        self.fields['image'].widget.attrs['class'] = 'custom-file-input'
 
     class Meta:
         model = User
