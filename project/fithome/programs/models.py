@@ -14,8 +14,8 @@ class Programs(models.Model):
         verbose_name_plural = 'программы'
 
 class Exercise(models.Model):
-    name = models.CharField(max_length=250, verbose_name='Название упражения')
-    image = models.ImageField(upload_to='programs/images/', blank=True, verbose_name='Изображение')
+    name = models.CharField(max_length=250, verbose_name='Название упражнения')
+    image = models.ImageField(upload_to='program_images/', blank=True, verbose_name='Изображение')
     url = models.URLField(blank=True, unique=True)
     description = models.TextField(blank=True, verbose_name='Описание')
     short_description = models.CharField(max_length=100, blank=True, verbose_name='Краткое описание')
@@ -30,7 +30,7 @@ class Exercise(models.Model):
 
 class Photo(models.Model):
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, verbose_name='Упражнения')
-    add_photo = models.ImageField(upload_to='programs/images/', blank=True, verbose_name='Фото')
+    add_photo = models.ImageField(upload_to='program_images/add/', blank=True, verbose_name='Фото')
 
     def __str__(self):
         return str(self.id)

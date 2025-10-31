@@ -8,6 +8,8 @@ class PhotoAdd(admin.StackedInline):
     extra = 0
 
 class ExerciseAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'category')
+    list_display_links = ('id', 'name')
     inlines = [PhotoAdd]
 
 class PhotoAdmin(admin.ModelAdmin):
