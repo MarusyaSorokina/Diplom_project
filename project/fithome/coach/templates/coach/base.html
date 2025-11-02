@@ -34,26 +34,25 @@
                                         <ul id="navigation">
                                             <li><a href="{% url 'index' %}">Главная</a></li>
                                             <li><a href="{% url 'coach' %}">О нас</a></li>
-                                            <li><a href="services.html">Тренировки</a></li>
+                                            <li><a href="{% url 'program' %}">Тренировки</a></li>
                                             <li><a href="food.html">Питание</a></li>
                                             <li><a href="blog.html">Блог</a></li>
 
                                             {% if user.is_authenticated %}
-                                            <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
-<!--                                            <div class="header-right-btn f-right d-none d-lg-block ml-30">-->
-<!--                                    <a href="{% url 'login' %}" class="btn header-btn">Выйти</a>-->
-<!--                                </div>-->
+                                                <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
+                                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                                <a href="{% url 'logout' %}" class="btn header-btn">Выйти</a>
+                                            </div>
                                             {% else %}
-                                            <li><a href="{% url 'register' %}">Регистрация</a></li>
-
+                                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                                <a href="{% url 'login' %}" class="btn header-btn">Войти</a>
+                                            </div>
 
                                             {% endif %}
                                         </ul>
                                     </nav>
                                 </div>
-                                <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                    <a href="{% url 'login' %}" class="btn header-btn">Авторизация</a>
-                                </div>
+
                             </div>
                         </div>
                         <!-- Mobile Menu -->

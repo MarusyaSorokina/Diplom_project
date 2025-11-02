@@ -3,17 +3,17 @@
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-<!--	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">-->
-<!--	<link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}">-->
-<!--    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">-->
-<!--    <link rel="stylesheet" href="{% static 'assets/css/gijgo.css' %}">-->
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/gijgo.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/animated-headline.css' %}">
-<!--	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">-->
-<!--	<link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">-->
-<!--	<link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">-->
-<!--	<link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">-->
-<!--	<link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">-->
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
 	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 {% endblock %}
 
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-3">
-                            <a href="services.html" class="btn wantToWork-btn f-right">Больше программ</a>
+                            <a href="{% url 'program' %}" class="btn wantToWork-btn f-right">Больше программ</a>
                         </div>
                     </div>
                 </div>
@@ -169,11 +169,11 @@
 <!--                                <i class="flaticon-fitness"></i>-->
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="services.html">{{ tren.title }}</a></h5>
+                                <h5><a href="{% url 'program' %}">{{ tren.title }}</a></h5>
                                 <p>{{ tren.description }}</p>
                             </div>
                             <div class="img-cap">
-                                <a href="services.html" class="">Узнать больше о нас <i class="ti-arrow-right"></i></a>
+                                <a href="{% url 'program' %}" class="">Узнать больше о нас <i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

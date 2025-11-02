@@ -27,14 +27,20 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('programs/', include('programs.urls')),
 
-    path('reset-password/', auth_views.PasswordResetView.as_view(template_mame="users/reset_password.html"),
-         name='reset_password'),
-    path('reset-password_send/', auth_views.PasswordResetDoneView.as_view(template_mame="users/reset_password_send.html"),
-         name='password_reset_done'),
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_mame="users/reset.html"),
-         name='password_reset_confirm'),
-    path('reset-password_complete/', auth_views.PasswordResetCompleteView.as_view(template_mame="users/reset_password_complete.html"),
-         name='password_reset_complete'),
+    path('reset-password/', auth_views.PasswordResetView.as_view(template_name="users/reset_password.html"),
+         name="reset_password"),
+    # пользователь отправляет электронное письмо для сброса
+    path('reset_password_send/',
+         auth_views.PasswordResetDoneView.as_view(template_name="users/reset_password_send.html"),
+         name="password_reset_done"),
+    # Сообщение, отправленное по электронной почте
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="users/reset.html"),
+         name="password_reset_confirm"),
+    # Электронное письмо со ссылкой и инструкциями по сбросу
+    path('reset_password_complete/',
+         auth_views.PasswordResetCompleteView.as_view(template_name='users/reset_password_complete.html'),
+         name="password_reset_complete"),
+    # Сообщение об успешном сбросе пароля
 
 ]
 
